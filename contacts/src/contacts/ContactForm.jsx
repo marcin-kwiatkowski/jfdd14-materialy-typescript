@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ContactForm.module.css'
 import { storeContact } from './contactActions'
 import { withContacts } from './ContactsContext'
-import uuid from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 class ContactForm extends React.Component {
     state = {
@@ -52,7 +52,7 @@ class ContactForm extends React.Component {
         if (this.formIsValid()) {
             const { firstName, lastName, phoneNumber, email } = this.state
             const contact = {
-                id: uuid(),
+                id: uuidv4(),
                 firstName,
                 lastName,
                 phoneNumber,
